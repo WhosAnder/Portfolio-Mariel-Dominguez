@@ -90,19 +90,19 @@ export function ContactSection() {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>mariel.dominguez@email.com</span>
+                  <span>mariel.dominguezlo@udlap.mx</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Instagram className="h-5 w-5 text-primary" />
-                  <span>@mariel_animation</span>
+                  <span>@mags._.737</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Linkedin className="h-5 w-5 text-primary" />
-                  <span>linkedin.com/in/marieldominguez</span>
+                  <span>-</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Youtube className="h-5 w-5 text-primary" />
-                  <span>Mariel Domínguez Animation</span>
+                  <span>-</span>
                 </div>
               </CardContent>
             </Card>
@@ -111,9 +111,9 @@ export function ContactSection() {
               <CardContent className="pt-6">
                 <div className="text-center">
                   <p className="text-muted-foreground mb-4 font-kalam text-lg">
-                    "Animation is not the art of drawings that move, but the art of movements that are drawn."
+                    "Hoponopono."
                   </p>
-                  <p className="text-sm text-muted-foreground">- Norman McLaren</p>
+                  <p className="text-sm text-muted-foreground">- Walter Bazar</p>
                 </div>
               </CardContent>
             </Card>

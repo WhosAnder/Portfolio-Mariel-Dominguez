@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Play, Award } from "lucide-react"
 
 const demoVideo = {
-  id: "OMPHJHXUZPo", // 👈 cambia aquí el ID de YouTube
+  id: "OMPHJHXUZPo", // 
   title: "Mariel Domínguez - Demo Reel 2024",
 }
 
@@ -28,7 +28,7 @@ export function DemoReelSection() {
         <div className="max-w-4xl mx-auto">
           <Card className="overflow-hidden sketchbook-border">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl mb-2">Featured Demo Reel</CardTitle>
+              <CardTitle className="text-2xl mb-2">Demo Reel</CardTitle>
               <CardDescription>
                 A comprehensive look at my animation journey and technical expertise
               </CardDescription>
@@ -63,21 +63,8 @@ export function DemoReelSection() {
 
               <div className="mt-6 text-center">
                 <p className="text-muted-foreground mb-4">
-                  This demo reel showcases my expertise in character animation, motion graphics, visual effects, and
-                  storytelling through digital media.
+                  Compilación de animaciones en 2D.
                 </p>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {["Character Animation", "Motion Graphics", "Visual Effects", "3D Modeling", "Compositing"].map(
-                    (skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-                      >
-                        {skill}
-                      </span>
-                    ),
-                  )}
-                </div>
               </div>
             </CardContent>
           </Card>
