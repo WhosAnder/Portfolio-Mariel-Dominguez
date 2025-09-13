@@ -4,6 +4,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  basePath:'/Portfolio-Mariel-Dominguez',
   typescript: {
     ignoreBuildErrors: true,
   },
