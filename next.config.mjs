@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  images: { unoptimized: true },
   basePath: '/Portfolio-Mariel-Dominguez',
   assetPrefix: '/Portfolio-Mariel-Dominguez',
   trailingSlash: true,
+  images: { unoptimized: true },
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
-};
-export default nextConfig;
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/Portfolio-Mariel-Dominguez',
+  },
+}
+export default nextConfig

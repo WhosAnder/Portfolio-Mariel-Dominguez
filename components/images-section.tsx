@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { X, ZoomIn, ChevronDown, ChevronUp } from "lucide-react"
+import { asset } from "@/lib/asset"   // 👈 helper
 
 const images = [
   {
@@ -49,17 +50,13 @@ export function ImagesSection() {
   const [openAccordions, setOpenAccordions] = useState<Set<number>>(new Set())
 
   const toggleAccordion = (index: number) => {
-    const newOpenAccordions = new Set(openAccordions)
-    if (newOpenAccordions.has(index)) {
-      newOpenAccordions.delete(index)
-    } else {
-      newOpenAccordions.add(index)
-    }
-    setOpenAccordions(newOpenAccordions)
+    const next = new Set(openAccordions)
+    next.has(index) ? next.delete(index) : next.add(index)
+    setOpenAccordions(next)
   }
 
-  const openLightbox = (imageData: { src: string; alt: string; title: string }, event: React.MouseEvent) => {
-    event.stopPropagation()
+  const openLightbox = (imageData: { src: string; alt: string; title: string }, e: React.MouseEvent) => {
+    e.stopPropagation()
     setSelectedImage(imageData)
   }
 
@@ -83,7 +80,7 @@ export function ImagesSection() {
                   onClick={(e) => openLightbox({ src: image.src, alt: image.alt, title: image.title }, e)}
                 >
                   <Image
-                    src={image.src || "/placeholder.svg"}
+                    src={asset(image.src) || asset("/placeholder.svg")}
                     alt={image.alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -110,15 +107,15 @@ export function ImagesSection() {
                       </CollapsibleTrigger>
                       <CollapsibleContent className="mt-3">
                         <div className="grid grid-cols-2 gap-2">
-                          {image.processImages?.map((processImg, processIndex) => (
+                          {image.processImages?.map((pimg, i) => (
                             <div
-                              key={processIndex}
+                              key={i}
                               className="relative aspect-square cursor-pointer group/process"
-                              onClick={(e) => openLightbox(processImg, e)}
+                              onClick={(e) => openLightbox(pimg, e)}
                             >
                               <Image
-                                src={processImg.src || "/placeholder.svg"}
-                                alt={processImg.alt}
+                                src={asset(pimg.src) || asset("/placeholder.svg")}
+                                alt={pimg.alt}
                                 fill
                                 className="object-cover rounded group-hover/process:scale-105 transition-transform duration-200"
                               />
@@ -126,7 +123,7 @@ export function ImagesSection() {
                                 <ZoomIn className="h-4 w-4 text-white opacity-0 group-hover/process:opacity-100 transition-opacity" />
                               </div>
                               <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-1 text-center">
-                                {processImg.title}
+                                {pimg.title}
                               </div>
                             </div>
                           ))}
@@ -151,7 +148,7 @@ export function ImagesSection() {
                 <X className="h-8 w-8" />
               </button>
               <Image
-                src={selectedImage.src || "/placeholder.svg"}
+                src={asset(selectedImage.src) || asset("/placeholder.svg")}
                 alt={selectedImage.alt}
                 width={800}
                 height={800}
