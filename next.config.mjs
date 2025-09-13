@@ -1,17 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  basePath:'/Portfolio-Mariel-Dominguez',
+  output: 'export',
+  images: { unoptimized: true },
+  basePath: '/Portfolio-Mariel-Dominguez',
+  assetPrefix: '/Portfolio-Mariel-Dominguez',
   trailingSlash: true,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
-
-export default nextConfig
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+};
+export default nextConfig;

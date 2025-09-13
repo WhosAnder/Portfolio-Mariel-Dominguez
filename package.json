@@ -7,7 +7,7 @@
   "build": "next build",
   "export": "next build",
   "start": "next start",
-  "predeploy": "npm run build",
+  "predeploy": "npm run build && node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
   "deploy": "gh-pages -d out -b gh-pages"
   },
   "dependencies": {
