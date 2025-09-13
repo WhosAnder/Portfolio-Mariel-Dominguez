@@ -5,6 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   basePath:'/Portfolio-Mariel-Dominguez',
+  trailingSlash: true,
   typescript: {
     ignoreBuildErrors: true,
   },
