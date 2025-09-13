@@ -1,14 +1,19 @@
+"use client"
+
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Play } from "lucide-react"
 
 const video = {
-  id: "dQw4w9WgXcQ",
+  id: "UZqincNFASQ", // 👈 tu video
   title: "Animation Showcase Reel",
   description:
     "A comprehensive showcase of my animation work including character animation, motion graphics, and visual effects techniques.",
 }
 
 export function VideoEditingSection() {
+  const [isPlaying, setIsPlaying] = useState(false)
+
   return (
     <section id="video-editing" className="py-20 bg-card/5">
       <div className="container mx-auto px-4">
@@ -19,19 +24,33 @@ export function VideoEditingSection() {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Card className="group hover:shadow-xl transition-all duration-300 sketchbook-border">
             <CardHeader>
               <div className="relative aspect-video bg-muted rounded-lg overflow-hidden mb-4">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title={video.title}
-                  className="w-full h-full"
-                  allowFullScreen
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                  <Play className="h-12 w-12 text-white opacity-80 group-hover:opacity-100 transition-opacity" />
-                </div>
+                {isPlaying ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
+                    title={video.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                ) : (
+                  <button
+                    onClick={() => setIsPlaying(true)}
+                    className="w-full h-full relative"
+                  >
+                    <img
+                      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                      <Play className="h-16 w-16 text-white opacity-90" />
+                    </div>
+                  </button>
+                )}
               </div>
               <CardTitle className="text-xl">{video.title}</CardTitle>
             </CardHeader>

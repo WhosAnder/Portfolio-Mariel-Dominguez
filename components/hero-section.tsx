@@ -20,15 +20,15 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 py-20 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
-          {/* Portfolio Cover Image */}
-          <div className="mb-8 relative">
+        <div className="w-full">
+          {/* Portfolio Cover Image - Fullscreen */}
+          <div className="mb-8 relative w-full">
             <Image
               src="/images/portfolio-cover.png"
               alt="Digital Animation Portfolio of Mariel Domínguez"
-              width={600}
-              height={400}
-              className="mx-auto rounded-lg shadow-2xl"
+              width={1920}
+              height={1080}
+              className="w-full h-auto max-h-[70vh] object-contain rounded-lg shadow-2xl"
               priority
             />
           </div>
