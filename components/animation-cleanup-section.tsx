@@ -5,22 +5,22 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Play } from "lucide-react"
 
 const video = {
-  id: "fA0zKxOjv9Y",
-  title: "Espacial",
+  id: "SglZHjA0Yng",
+  title: "Animation and Clean Up",
   description:
-    "Se animo del segundo 0.10 al 0.38, realización de promps.",
+    "Trabajo de animación y clean up realizado por Mariel Domínguez.",
 }
 
-export function VideoEditingSection() {
+export function AnimationCleanupSection() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   return (
-    <section id="video-editing" className="py-20 bg-card/5">
+    <section id="animation-cleanup" className="py-20 bg-card/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Video Editing & Animation</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Animation and Clean Up</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-            Explore my animated projects, from character design to motion graphics and visual effects.
+            Showcasing animation and clean up work, bringing sketches to polished final frames.
           </p>
         </div>
 

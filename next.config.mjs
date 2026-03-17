@@ -1,14 +1,16 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   output: 'export',
-  basePath: '/Portfolio-Mariel-Dominguez',
-  assetPrefix: '/Portfolio-Mariel-Dominguez',
+  basePath: isProd ? '/Portfolio-Mariel-Dominguez' : '',
+  assetPrefix: isProd ? '/Portfolio-Mariel-Dominguez' : '',
   trailingSlash: true,
   images: { unoptimized: true },
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
   env: {
-    NEXT_PUBLIC_BASE_PATH: '/Portfolio-Mariel-Dominguez',
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/Portfolio-Mariel-Dominguez' : '',
   },
 }
 export default nextConfig

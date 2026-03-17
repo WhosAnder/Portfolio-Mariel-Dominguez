@@ -36,6 +36,12 @@ export function Navigation() {
               Video Editing
             </button>
             <button
+              onClick={() => scrollToSection("animation-cleanup")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Animation & Clean Up
+            </button>
+            <button
               onClick={() => scrollToSection("demo-reel")}
               className="text-foreground hover:text-primary transition-colors"
             >
@@ -76,6 +82,12 @@ export function Navigation() {
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
                 Video Editing
+              </button>
+              <button
+                onClick={() => scrollToSection("animation-cleanup")}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Animation & Clean Up
               </button>
               <button
                 onClick={() => scrollToSection("demo-reel")}
